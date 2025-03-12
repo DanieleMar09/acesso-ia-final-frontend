@@ -16,7 +16,6 @@
               <button type="submit" class="btn btn-primary btn-block">
                   Acessar
               </button>
-         
           </div>
       </form>
     </div>
@@ -41,34 +40,31 @@ export default {
     async Processarlogin() {
       try{
         const response = await axios.post('https://localhost:7263/api/v1/login/autenticar', this.dadosLogin);
-        const resultado = response.data;
-        console.log(resultado);  
-         Swal.fire({
-          title:'Login realizado com sucesso',
-          text:'Você será redirecionado para o sistema',
-          icon:'success',
-          timer:2000,
-         showConfirmButton: false
-
+        localStorage.setItem('dados-usuario-logado', 
+        JSON.stringify(response.data));
+        
+        Swal.fire({
+          title: 'Login realizado com sucesso',
+          text: 'Você será redirecionado para o sistema',
+          icon: 'success',
+          timer: 2000,
+          showConfirmButton: false
         });
 
-
         //Redirecionando
-        setTimeout(() =>{
+        setTimeout(() => {
           this.$router.push('/home');
         },2000);
 
       }catch(error) {
         this.errorAlerta = 'Login ou senha inválidos';
         Swal.fire({
-          title:'Atenção -Erro',
-          text:this.errorAlerta,
-          icon:'error',
-          confirmButtonTEext: 'Ok'
-
+          title: 'Atenção - Erro',
+          text: this.errorAlerta,
+          icon: 'error',
+          confirmButtonText: 'Ok'
         });
       }
-
     }
   }
 };
