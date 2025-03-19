@@ -3,7 +3,8 @@ import Router from 'vue-router';
 import Login from '@/components/Login.vue';
 import Home from '@/components/Home.vue';
 import Usuarios from '@/components/Usuarios.vue';
-
+import CadastrarUsuarios from '@/components/CadastrarUsuarios.vue';
+import EditarUsuario from '@/components/EditarUsuario.vue';
 Vue.use(Router);
 
 const router =  new Router({
@@ -15,6 +16,8 @@ const router =  new Router({
             component: Home,
             children: [
                 { path: "usuarios", component: Usuarios },
+                { path: "usuarios/cadastrar", component: CadastrarUsuarios },
+                { path: "usuarios/editar/:id", component: EditarUsuario },
             ],
             meta: { requiresAuth: true}
         },

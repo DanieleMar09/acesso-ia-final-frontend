@@ -1,10 +1,9 @@
 <template>
     <div>
-        <h2>Gernciamento de usuarios </h2>
-
+        <h2 class="text-center mb-4">Gerenciamento de Usuário</h2>
         <!-- Botao para criar novo -->
          <div class="mb-3">
-            <router-link to="/usuario/cadastrar" class="btn btn-success">
+            <router-link to="usuarios/cadastrar" class="btn btn-success">
                 <i class="fa fa-plus">Adicionar novo</i>
             </router-link>
          </div>
@@ -45,9 +44,11 @@
 
             
                 <td>
-                    <button class="btn btn-primary btn-sm">
-                        <i class="fa fa-edit"></i>Editar
-                    </button>
+              
+
+                <router-link :to="`/home/usuarios/editar/${usuario.id}`" class="btn btn-primary btn-sm">
+                <i class="fa fa-edit">Editar</i>
+            </router-link>
 
                     <button class="btn btn-danger btn-sm ml-2" @click="excluir(usuario.id)" >
                         <i class="fa fa-trash"></i>Excluir
