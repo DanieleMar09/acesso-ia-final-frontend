@@ -16,6 +16,18 @@
               Usuários
               </router-link>
             </li>
+            <li class="nav-item">
+  <router-link class="nav-link" to="/home/acessos/registrar">Registrar Acesso</router-link>
+</li>
+
+<li class="nav-item">
+  <router-link class="nav-link" to="/home/acessos/listar">Listar Acessos</router-link>
+</li>
+
+<li class="nav-item">
+  <router-link class="nav-link" to="/home/acessos/listar">Comparar Imagens</router-link>
+</li>
+
           </ul>
          </div>
       </div>

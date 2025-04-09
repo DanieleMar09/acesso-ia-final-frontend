@@ -101,7 +101,7 @@ methods: {
       });
       this.on("removedfile", function(){
         self.previewImagem = null;
-        self.usuario.foto = null;
+        self.usuario.foto_perfil = null;
       });
     }
     });
