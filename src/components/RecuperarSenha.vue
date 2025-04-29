@@ -76,7 +76,7 @@ export default {
   methods: {
     async handleSubmit() {
       if (!this.emailEncontrado) {
-        // Passo 1: Buscar e-mail
+      
         if (!this.email) {
           Swal.fire({
             icon: "warning",
